@@ -56,7 +56,7 @@ function takeLocation(data, instance) {
       // Send location data to assistant as context variables
       instance.send({
         input: {
-          text: `J'ai trouvé l'agence Wafasalaf la plus proche à ${nearestLocation.distance || "quelques"} km.`
+          text: `J'ai trouvé l'agence CIH la plus proche à ${nearestLocation.distance || "quelques"} km.`
         },
         context: {
           "skills": {
@@ -90,7 +90,7 @@ function takeLocation(data, instance) {
 
       instance.send({
         input: {
-          text: "Je n'ai pas pu trouver d'agence Wafasalaf à proximité. J'ai partagé ma localisation actuelle."
+          text: "Je n'ai pas pu trouver d'agence CIH à proximité. J'ai partagé ma localisation actuelle."
         },
         context: {
           "skills": {
