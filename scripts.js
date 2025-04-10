@@ -101,7 +101,7 @@ function takeLocation(data, instance) {
                 "Nearest_Bank_Name": "Wafasalaf",
                 "Nearest_Bank_Distance": "N/A",
                 "Directions_Origin": originCoords,
-                "Directions_Destination": destinationCoords,
+                "Directions_Destination": "CIH+Bank",
                 "Directions_URL": `https://www.google.com/maps/embed/v1/search?key=AIzaSyAd3acpn2pZuAye8gk46LkFkMpPdmBQEFQ&q=Wafasalaf&center=${originCoords}`
               },
             }
