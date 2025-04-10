@@ -341,7 +341,7 @@ async function onLoad(instance) {
 // Initialize Watson Assistant when the page loads
 document.addEventListener('DOMContentLoaded', function() {
   window.watsonAssistantChatOptions = {
-    integrationID: "2cbbd706-f711-41d6-bd81-83eee378f8ba",
+    integrationID: "30a0ad13-c6f8-4da0-90a1-9b0760359d3a",
     region: "au-syd",
     serviceInstanceID: "02cff0bf-6880-413a-a103-7e26e50ff214",
     onLoad: onLoad

@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wafasalaf - Simulateur de Prêt</title>
+  <title>CIH Bank - Simulateur de Crédit</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
   <header>
     <div class="logo-container">
-      <img src="https://i.ibb.co/1GmMP33k/wafasalaf-2x.png" alt="Wafasalaf Logo" class="logo">
+      <img src="logo.png" alt="CIH Bank Logo" class="logo">
     </div>
     <nav>
       <ul>
         <li><a href="#" class="active">Accueil</a></li>
-        <li><a href="#">Mes besoins</a></li>
-        <li><a href="#">Mes promotions</a></li>
-        <li><a href="#">Guides pratiques</a></li>
-        <li><a href="#">Découvrir Wafasalaf</a></li>
+        <li><a href="#">Particuliers</a></li>
+        <li><a href="#">Professionnels</a></li>
+        <li><a href="#">Entreprises</a></li>
+        <li><a href="#">Services digitaux</a></li>
       </ul>
     </nav>
     <div class="auth-buttons">
-      <button class="btn btn-outline">Se connecter</button>
-      <button class="btn btn-primary">Ouvrir un compte</button>
+      <button class="btn btn-outline">CIH Online</button>
+      <button class="btn btn-primary">Devenir client</button>
     </div>
   </header>
 
   <div class="hero">
     <div class="hero-content">
-      <h1>Simplifiez vos projets avec un crédit adapté</h1>
-      <p>Des solutions de financement personnalisées pour tous vos besoins</p>
+      <h1>Concrétisez vos projets avec CIH Bank</h1>
+      <p>Des solutions de financement adaptées pour tous vos besoins</p>
       <button class="btn btn-secondary">Découvrir nos offres</button>
     </div>
   </div>
@@ -38,51 +38,55 @@
   <div class="main-container">
     <div class="simulator-section">
       <div class="section-header">
-        <h2>Demander un crédit avec Wafasalaf, c'est simple !</h2>
-        <p>Calculez vos mensualités en quelques clics</p>
+        <h2>Simulez votre crédit en quelques clics</h2>
+        <p>Obtenez une estimation immédiate de vos mensualités</p>
       </div>
 
-      <div class="simulator-container">
+      <div class="simulator-container full-width">
         <div class="simulator">
-          <div class="form-group">
-            <label for="project-type">Type de projet</label>
-            <select id="project-type" name="project-type" class="styled-select">
-              <option value="">Sélectionnez un type de projet</option>
-              <option value="J'ai besoin d'argent">J'ai besoin d'argent</option>
-              <option value="Je finance ma véhicule d'occasion">Je finance ma véhicule d'occasion</option>
-              <option value="Je gère mes imprévus">Je gère mes imprévus</option>
-              <option value="Je finance ma véhicule neuf">Je finance ma véhicule neuf</option>
-              <option value="J'équipe ma maison">J'équipe ma maison</option>
-            </select>
+          <div class="simulator-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="project-type">Type de projet</label>
+                <select id="project-type" name="project-type" class="styled-select">
+                  <option value="">Sélectionnez un type de projet</option>
+                  <option value="J'ai besoin d'argent">J'ai besoin d'argent</option>
+                  <option value="Je finance ma véhicule d'occasion">Je finance ma véhicule d'occasion</option>
+                  <option value="Je gère mes imprévus">Je gère mes imprévus</option>
+                  <option value="Je finance ma véhicule neuf">Je finance ma véhicule neuf</option>
+                  <option value="J'équipe ma maison">J'équipe ma maison</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="profession">Profession</label>
+                <select id="profession" name="profession" class="styled-select">
+                  <option value="">Sélectionnez votre profession</option>
+                  <option value="Salarié du secteur privé">Salarié du secteur privé</option>
+                  <option value="Fonctionnaire">Fonctionnaire</option>
+                  <option value="Commerçant">Commerçant</option>
+                  <option value="Profession libérale">Profession libérale</option>
+                  <option value="Retraité">Retraité</option>
+                </select>
+              </div>
+            
+              <div class="form-group">
+                <label for="loan-amount">Montant du prêt</label>
+                <input id="loan-amount" type="number" placeholder="Entrez le montant du prêt">
+              </div>
+
+              <div class="form-group">
+                <label for="loan-duration">Durée (en mois)</label>
+                <input id="loan-duration" type="number" placeholder="Entrez la durée du prêt" value="12">
+              </div>
+            </div>
+
+            <!-- Hidden inputs for storing additional data -->
+            <input type="hidden" id="project-type-hidden" name="project-type-hidden">
+            <input type="hidden" id="profession-hidden" name="profession-hidden">
+
+            <button id="calculate-btn" onclick="calculateLoan()">Simuler mes mensualités</button>
           </div>
-
-          <div class="form-group">
-            <label for="profession">Profession</label>
-            <select id="profession" name="profession" class="styled-select">
-              <option value="">Sélectionnez votre profession</option>
-              <option value="Salarié du secteur privé">Salarié du secteur privé</option>
-              <option value="Fonctionnaire">Fonctionnaire</option>
-              <option value="Commerçant">Commerçant</option>
-              <option value="Profession libérale">Profession libérale</option>
-              <option value="Retraité">Retraité</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="loan-amount">Montant du prêt</label>
-            <input id="loan-amount" type="number" placeholder="Entrez le montant du prêt">
-          </div>
-
-          <div class="form-group">
-            <label for="loan-duration">Durée (en mois)</label>
-            <input id="loan-duration" type="number" placeholder="Entrez la durée du prêt" value="12">
-          </div>
-
-          <!-- Hidden inputs for storing additional data -->
-          <input type="hidden" id="project-type" name="project-type">
-          <input type="hidden" id="profession" name="profession">
-
-          <button id="calculate-btn" onclick="calculateLoan()">Simuler mes mensualités</button>
 
           <div id="result" class="result">
             <h3>Résultat de la simulation</h3>
@@ -92,41 +96,73 @@
           </div>
         </div>
 
-        <div class="simulator-info">
-          <div class="info-card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Sécurisé</h3>
-            <p>Vos données sont protégées avec les normes de sécurité les plus élevées</p>
+        <div class="simulator-features">
+          <div class="info-cards-container">
+            <div class="info-card">
+              <i class="fas fa-shield-alt"></i>
+              <h3>100% Sécurisé</h3>
+              <p>Vos données sont protégées avec les normes de sécurité les plus élevées</p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-bolt"></i>
+              <h3>Réponse rapide</h3>
+              <p>Obtenez une réponse de principe en quelques minutes</p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-check-circle"></i>
+              <h3>Sans engagement</h3>
+              <p>La simulation ne vous engage à rien</p>
+            </div>
           </div>
-          <div class="info-card">
-            <i class="fas fa-bolt"></i>
-            <h3>Rapide</h3>
-            <p>Obtenez une réponse de principe en quelques minutes</p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-check-circle"></i>
-            <h3>Sans engagement</h3>
-            <p>La simulation ne vous engage à rien</p>
-          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="advantages-section">
+      <div class="section-header">
+        <h2>Pourquoi choisir CIH Bank ?</h2>
+        <p>Les avantages qui font la différence</p>
+      </div>
+
+      <div class="advantages-container">
+        <div class="advantage-card">
+          <i class="fas fa-percent"></i>
+          <h3>Taux compétitifs</h3>
+          <p>Bénéficiez des meilleurs taux du marché pour tous vos projets</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-clock"></i>
+          <h3>Délai raccourci</h3>
+          <p>Traitement accéléré de votre dossier pour une réponse rapide</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>100% digital</h3>
+          <p>Suivez votre dossier en ligne sans vous déplacer</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-handshake"></i>
+          <h3>Accompagnement</h3>
+          <p>Un conseiller dédié pour vous accompagner tout au long de votre projet</p>
         </div>
       </div>
     </div>
 
     <div class="features-section">
       <div class="section-header">
-        <h2>Nos services bancaires</h2>
-        <p>Des solutions adaptées à tous vos besoins</p>
+        <h2>Nos solutions de financement</h2>
+        <p>Des offres adaptées à chaque projet</p>
       </div>
 
       <div class="features-container">
         <div class="feature-card">
           <i class="fas fa-home"></i>
           <h3>Crédit Immobilier</h3>
-          <p>Financement pour l'achat de votre résidence principale ou investissement locatif</p>
+          <p>Financement pour l'achat ou la construction de votre bien immobilier</p>
         </div>
         <div class="feature-card">
           <i class="fas fa-car"></i>
-          <h3>Prêt Auto</h3>
+          <h3>Crédit Auto</h3>
           <p>Solutions avantageuses pour l'achat de votre véhicule neuf ou d'occasion</p>
         </div>
         <div class="feature-card">
@@ -136,7 +172,7 @@
         </div>
         <div class="feature-card">
           <i class="fas fa-briefcase"></i>
-          <h3>Prêt Professionnel</h3>
+          <h3>Crédit Professionnel</h3>
           <p>Financement adapté aux besoins des entrepreneurs et professionnels</p>
         </div>
       </div>
@@ -146,41 +182,41 @@
   <footer>
     <div class="footer-content">
       <div class="footer-logo">
-        <img src="https://i.ibb.co/1GmMP33k/wafasalaf-2x.png" alt="WafaSalaf Logo" class="logo-small">
-        <p>Votre partenaire financier de confiance</p>
+        <img src="logo.png" alt="CIH Bank Logo" class="logo-small">
+        <p>Ensemble, avançons vers l'avenir</p>
       </div>
       <div class="footer-links">
         <div class="footer-column">
-          <h4>Produits</h4>
+          <h4>Nos offres</h4>
           <ul>
-            <li><a href="#">Crédit immobilier</a></li>
-            <li><a href="#">Prêt personnel</a></li>
-            <li><a href="#">Crédit auto</a></li>
-            <li><a href="#">Épargne</a></li>
+            <li><a href="#">Comptes et cartes</a></li>
+            <li><a href="#">Crédits</a></li>
+            <li><a href="#">Épargne et placements</a></li>
+            <li><a href="#">Assurances</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>À propos</h4>
+          <h4>CIH Bank</h4>
           <ul>
-            <li><a href="#">Notre histoire</a></li>
-            <li><a href="#">Carrières</a></li>
+            <li><a href="#">Qui sommes-nous</a></li>
+            <li><a href="#">Nos valeurs</a></li>
             <li><a href="#">Actualités</a></li>
-            <li><a href="#">Responsabilité sociale</a></li>
+            <li><a href="#">Carrières</a></li>
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Support</h4>
+          <h4>Aide et contact</h4>
           <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Centre d'aide</a></li>
             <li><a href="#">Agences</a></li>
+            <li><a href="#">Nous contacter</a></li>
             <li><a href="#">Réclamations</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 WafaSalaf.</p>
+      <p>&copy; 2025 CIH Bank. Tous droits réservés.</p>
       <div class="social-icons">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
