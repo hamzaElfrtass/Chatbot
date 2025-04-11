@@ -47,14 +47,11 @@
           <div class="simulator-content">
             <div class="simulator-form">
               <div class="form-group">
-                <label for="project-type">Type de projet</label>
+                <label for="project-type">Êtes-vous un client de CIH Bank ?</label>
                 <select id="project-type" name="project-type" class="styled-select">
-                  <option value="">Sélectionnez un type de projet</option>
-                  <option value="J'ai besoin d'argent">J'ai besoin d'argent</option>
-                  <option value="Je finance ma véhicule d'occasion">Je finance ma véhicule d'occasion</option>
-                  <option value="Je gère mes imprévus">Je gère mes imprévus</option>
-                  <option value="Je finance ma véhicule neuf">Je finance ma véhicule neuf</option>
-                  <option value="J'équipe ma maison">J'équipe ma maison</option>
+                  <option value="">Sélectionnez une option</option>
+                  <option value="OUI">OUI</option>
+                  <option value="NON">NON</option>
                 </select>
               </div>
 
@@ -71,7 +68,7 @@
               </div>
             
               <div class="form-group">
-                <label for="loan-amount">Montant du prêt</label>
+                <label for="loan-amount">Pour quelle montant du credit ?</label>
                 <input id="loan-amount" type="number" placeholder="Entrez le montant du prêt">
               </div>
 
@@ -83,15 +80,17 @@
               <!-- Hidden inputs for storing additional data -->
               <input type="hidden" id="project-type-hidden" name="project-type-hidden">
               <input type="hidden" id="profession-hidden" name="profession-hidden">
-
-              <button id="calculate-btn" onclick="calculateLoan()">Simuler mes mensualités</button>
             </div>
 
-            <div id="result" class="result">
-              <h3>Résultat de la simulation</h3>
-              <p>Mensualité: <span id="monthly-payment"></span> DH</p>
-              <p>Coût total du crédit: <span id="total-cost"></span> DH</p>
-              <button class="btn btn-primary">Faire une demande</button>
+            <div class="simulator-right">
+              <button id="calculate-btn" onclick="calculateLoan()">Simuler mes mensualités</button>
+              
+              <div id="result" class="result">
+                <h3>Résultat de la simulation</h3>
+                <p>Mensualité: <span id="monthly-payment"></span> DH</p>
+                <p>Coût total du crédit: <span id="total-cost"></span> DH</p>
+                <button class="btn btn-primary">Faire une demande</button>
+              </div>
             </div>
           </div>
         </div>
