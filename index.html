@@ -44,8 +44,8 @@
 
       <div class="simulator-container full-width">
         <div class="simulator">
-          <div class="simulator-form">
-            <div class="form-row">
+          <div class="simulator-content">
+            <div class="simulator-form">
               <div class="form-group">
                 <label for="project-type">Type de projet</label>
                 <select id="project-type" name="project-type" class="styled-select">
@@ -79,20 +79,20 @@
                 <label for="loan-duration">Durée (en mois)</label>
                 <input id="loan-duration" type="number" placeholder="Entrez la durée du prêt" value="12">
               </div>
+
+              <!-- Hidden inputs for storing additional data -->
+              <input type="hidden" id="project-type-hidden" name="project-type-hidden">
+              <input type="hidden" id="profession-hidden" name="profession-hidden">
+
+              <button id="calculate-btn" onclick="calculateLoan()">Simuler mes mensualités</button>
             </div>
 
-            <!-- Hidden inputs for storing additional data -->
-            <input type="hidden" id="project-type-hidden" name="project-type-hidden">
-            <input type="hidden" id="profession-hidden" name="profession-hidden">
-
-            <button id="calculate-btn" onclick="calculateLoan()">Simuler mes mensualités</button>
-          </div>
-
-          <div id="result" class="result">
-            <h3>Résultat de la simulation</h3>
-            <p>Mensualité: <span id="monthly-payment"></span> DH</p>
-            <p>Coût total du crédit: <span id="total-cost"></span> DH</p>
-            <button class="btn btn-primary">Faire une demande</button>
+            <div id="result" class="result">
+              <h3>Résultat de la simulation</h3>
+              <p>Mensualité: <span id="monthly-payment"></span> DH</p>
+              <p>Coût total du crédit: <span id="total-cost"></span> DH</p>
+              <button class="btn btn-primary">Faire une demande</button>
+            </div>
           </div>
         </div>
 

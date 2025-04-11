@@ -223,7 +223,7 @@ function getLocationError(error, instance) {
 
   // See https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError
   if (error.code === GeolocationPositionError.PERMISSION_DENIED) {
-    text = "Je ne souhaite pas partager ma localisation pour le moment.";
+    text = " non ,Je ne souhaite pas partager ma localisation pour le moment.";
   } else if (error.code === GeolocationPositionError.POSITION_UNAVAILABLE) {
     text = "Le navigateur a rencontré une erreur lors du partage de ma localisation.";
   }
