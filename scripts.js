@@ -252,7 +252,7 @@ function extractNumericValue(value, text = '') {
   }
   return value;
 }
-
+// explain : 
 /**
  * Updates form fields with values from the chatbot response
  * @param {Object} data - The user_defined data from the chatbot
